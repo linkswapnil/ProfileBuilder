@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, Row, Col, Modal, Button } from "react-bootstrap";
+import { Modal, Button, Form } from "react-bootstrap";
 export class ProfileModal extends React.Component {
   render() {
     return (
@@ -11,18 +11,26 @@ export class ProfileModal extends React.Component {
       >
         <Modal.Header closeButton>
           <Modal.Title id="contained-modal-title-vcenter">
-            Modal heading
+            Edit Profile
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <h4>Centered Modal</h4>
-          <p>
-            Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
-            dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta
-            ac consectetur ac, vestibulum at eros.
-          </p>
+          <Form>
+            <Form.Group controlId="formBasicFirstName">
+              <Form.Label>First Name</Form.Label>
+              <Form.Control type="text" placeholder="Enter first name" />
+            </Form.Group>
+
+            <Form.Group controlId="formBasicLastName">
+              <Form.Label>Last Name</Form.Label>
+              <Form.Control type="password" placeholder="Enter last name" />
+            </Form.Group>
+          </Form>
         </Modal.Body>
         <Modal.Footer>
+          <Button variant="primary" type="submit">
+            Save
+          </Button>
           <Button onClick={this.props.onHide}>Close</Button>
         </Modal.Footer>
       </Modal>

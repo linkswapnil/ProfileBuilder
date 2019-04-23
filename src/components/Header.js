@@ -11,7 +11,14 @@ export const Header = props => {
       bg="dark"
       variant="dark"
     >
-      <Navbar.Brand href="#home">Logo</Navbar.Brand>
+      <Navbar.Brand href="#home">
+        <img
+          alt="hp-logo"
+          src="https://www8.hp.com/us/en/images/THP_S_K_RGB_150_LG_Ctcm2451096197_Ttcm245108559832_F.png"
+          width="30"
+          height="30"
+        />
+      </Navbar.Brand>
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="ml-auto">

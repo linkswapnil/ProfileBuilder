@@ -43,6 +43,27 @@ export class Profile extends React.Component {
             this.closeProfileModal();
           }}
         />
+        <Row>
+          <Col sm={10} xs={10}>
+            <Card>
+              <Card.Body>
+                <Card.Title>
+                  Profile
+                  <Edit
+                    onClose={this.closeProfileModal}
+                    onEditClick={() => {
+                      this.onEditProfile();
+                    }}
+                  />
+                </Card.Title>
+                <Card.Text>
+                  <Row>FirstName : John</Row>
+                  <Row>LastName : Smith</Row>
+                </Card.Text>
+              </Card.Body>
+            </Card>
+          </Col>
+        </Row>
       </div>
     );
   }
