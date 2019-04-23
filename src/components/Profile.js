@@ -2,16 +2,26 @@ import React from "react";
 import { Card, Row, Col } from "react-bootstrap";
 import { Edit } from "./icons/Edit";
 import { ProfileModal } from "./ProfileModal";
+import { ServicesModal } from "./ServicesModal";
 export class Profile extends React.Component {
   constructor(...args) {
     super(...args);
-    this.state = { profileModalShow: false };
+    this.state = { 
+      profileModalShow: false,
+      servicesModalShow: false
+    };
   }
   closeProfileModal() {
     this.setState({ profileModalShow: false });
   }
   onEditProfile() {
     this.setState({ profileModalShow: true });
+  }
+  closeServicesModal() {
+    this.setState({ servicesModalShow: false });
+  }
+  onEditServices() {
+    this.setState({ servicesModalShow: true });
   }
   render() {
     return (
@@ -48,11 +58,11 @@ export class Profile extends React.Component {
             <Card>
               <Card.Body>
                 <Card.Title>
-                  Profile
+                  Services
                   <Edit
                     onClose={this.closeProfileModal}
                     onEditClick={() => {
-                      this.onEditProfile();
+                      this.onEditServices();
                     }}
                   />
                 </Card.Title>
@@ -64,6 +74,12 @@ export class Profile extends React.Component {
             </Card>
           </Col>
         </Row>
+        <ServicesModal
+          show={this.state.servicesModalShow}
+          onHide={() => {
+            this.closeServicesModal();
+          }}
+        />
       </div>
     );
   }
