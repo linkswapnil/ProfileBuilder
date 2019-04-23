@@ -6,6 +6,9 @@ body > .container {
   padding: 60px 15px 0;
 }
 
+.main{
+  min-height: calc(100vh - 220px);
+}
 
 .btn-green {
   color: #fff;
