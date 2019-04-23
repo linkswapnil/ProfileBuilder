@@ -4,10 +4,10 @@ export const Main = props => {
   return (
     <main role="main" className="container">
       <div className="App area-padding">
-        <div class="container">
-          <div class="row justify-content-center">
-            <div class="col-lg-10 text-center">
-              <h1 class="font-weight-light">
+        <div>
+          <div className="row justify-content-center">
+            <div className="col-lg-10 text-center">
+              <h1 className="font-weight-light">
                 Powerful <b>Documentation</b> and Help Center Profile Builder.
               </h1>
             </div>
@@ -19,7 +19,7 @@ export const Main = props => {
               </a>
             </div>
           </div>
-          <Services/>
+          <Services />
         </div>
       </div>
     </main>

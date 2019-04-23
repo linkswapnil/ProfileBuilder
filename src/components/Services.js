@@ -3,7 +3,7 @@ import { Card, Button } from "react-bootstrap";
 export const Services = props => {
   return (
     <div id="services" class="services-area area-padding">
-      <div className="container">
+      <div className="container row justify-content-center">
         <div className="row">
           <div className="col-md-12 col-sm-12 col-xs-12">
             <div className="section-headline services-head text-center">
