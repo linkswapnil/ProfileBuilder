@@ -1,0 +1,12 @@
+.navbar-toggler>.close {
+  display:none;
+}
+.navbar-toggler.collapsed{
+  .navbar-toggler-icon{
+    background-image: none;
+    padding-top: 5px;
+    &::after{
+      content: "X"
+    }
+  }
+}
