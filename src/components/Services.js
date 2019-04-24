@@ -1,18 +1,18 @@
 import React from "react";
-import { Card, Button } from "react-bootstrap";
+import { Card, Button, Row, Col, Container } from "react-bootstrap";
 export const Services = props => {
   return (
-    <div id="services" class="services-area area-padding">
-      <div className="container row justify-content-center">
-        <div className="row">
-          <div className="col-md-12 col-sm-12 col-xs-12">
-            <div className="section-headline services-head text-center">
-              <h2>Our Services</h2>
-            </div>
+    <div className="mt-5">
+      <Row>
+        <Col xs={12} sm={12} md={12}>
+          <div className="text-center">
+            <h2>Our Services</h2>
           </div>
-        </div>
-        <div className="row">
-          <Card className="col-md-3 col-sm-3 col-xs-3">
+        </Col>
+      </Row>
+      <Row className="justify-content-center">
+        <Col md={3} lg={3} xl={3} sm={12} xs={12}>
+          <Card className="m-1">
             <Card.Body>
               <Card.Title>Services 1</Card.Title>
               <Card.Text>
@@ -22,9 +22,11 @@ export const Services = props => {
               <Button variant="primary">Go somewhere</Button>
             </Card.Body>
           </Card>
-          <Card className="col-md-3 col-sm-3 col-xs-3">
+        </Col>
+        <Col md={3} lg={3} xl={3} sm={12} xs={12}>
+          <Card className="m-1">
             <Card.Body>
-              <Card.Title>Services 2</Card.Title>
+              <Card.Title>Services 1</Card.Title>
               <Card.Text>
                 Some quick example text to build on the card title and make up
                 the bulk of the card's content.
@@ -32,9 +34,11 @@ export const Services = props => {
               <Button variant="primary">Go somewhere</Button>
             </Card.Body>
           </Card>
-          <Card className="col-md-3 col-sm-3 col-xs-3">
+        </Col>
+        <Col md={3} lg={3} xl={3} sm={12} xs={12}>
+          <Card className="m-1">
             <Card.Body>
-              <Card.Title>Services 3</Card.Title>
+              <Card.Title>Services 1</Card.Title>
               <Card.Text>
                 Some quick example text to build on the card title and make up
                 the bulk of the card's content.
@@ -42,9 +46,11 @@ export const Services = props => {
               <Button variant="primary">Go somewhere</Button>
             </Card.Body>
           </Card>
-          <Card className="col-md-3 col-sm-3 col-xs-3">
+        </Col>
+        <Col md={3} lg={3} xl={3} sm={12} xs={12}>
+          <Card className="m-1">
             <Card.Body>
-              <Card.Title>Services 4</Card.Title>
+              <Card.Title>Services 1</Card.Title>
               <Card.Text>
                 Some quick example text to build on the card title and make up
                 the bulk of the card's content.
@@ -52,8 +58,8 @@ export const Services = props => {
               <Button variant="primary">Go somewhere</Button>
             </Card.Body>
           </Card>
-        </div>
-      </div>
+        </Col>
+      </Row>
     </div>
   );
 };
