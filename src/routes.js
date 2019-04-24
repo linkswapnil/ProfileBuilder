@@ -10,7 +10,7 @@ export const Routes = () => {
   return (
     <>
       <Header />
-      <Container fluid="true">
+      <Container fluid="true" className="main">
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/user" component={User} />
