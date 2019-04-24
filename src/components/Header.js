@@ -5,14 +5,7 @@ import { Navbar, Nav, Button } from "react-bootstrap";
 export class Header extends React.Component {
   render() {
     return (
-      <Navbar
-        fluid
-        className="head"
-        collapseOnSelect
-        expand="lg"
-        bg="dark"
-        variant="dark"
-      >
+      <Navbar fluid collapseOnSelect expand="md" bg="dark" variant="dark">
         <Navbar.Brand href="#home">
           <img
             alt="hp-logo"
@@ -23,8 +16,8 @@ export class Header extends React.Component {
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="ml-auto text-right mr-2">
-            <Nav.Link className="mr-t4 text-white" href="#deets">
+          <Nav className="ml-auto text-right">
+            <Nav.Link className="mt-1 text-white" href="#deets">
               New User
             </Nav.Link>
             <Nav.Link eventKey={2} href="#memes">

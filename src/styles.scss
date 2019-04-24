@@ -7,26 +7,6 @@ html {
   min-height: calc(100vh - 210px);
 }
 
-.btn-green {
-  color: #fff;
-  background-color: #28a745;
-  border-color: #28a745;
-}
-
-.btn-green:hover {
-  color: #fff;
-  background-color: #218838;
-  border-color: #1e7e34;
-}
-
-.area-padding{
-  padding:40px 0px 50px
-}
-
-.mr-t4{
-  margin-top: 4px;
-}
-
 .text-white{
   color: white;
 }
@@ -46,13 +26,3 @@ html {
     cursor: pointer;
   }
 }
-
-// .card{
-//  // margin: 2px;
-//  border: none;
-//  padding-top:4px;
-//  .card-body{
-//   border: 1px solid rgba(0,0,0,.125);
-//   border-radius: .25rem;
-//  }
-// }
