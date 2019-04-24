@@ -3,7 +3,7 @@ import { Services } from "./Services";
 import { Row, Col, Button } from "react-bootstrap";
 export const Home = props => {
   return (
-    <div className="App">
+    <div className="App mt-4">
       <Row>
         <Col className="text-center">
           <h1 className="font-weight-light">
