@@ -26,7 +26,7 @@ export const Services = props => {
         <Col md={3} lg={3} xl={3} sm={12} xs={12}>
           <Card className="m-1">
             <Card.Body>
-              <Card.Title>Services 1</Card.Title>
+              <Card.Title>Services 2</Card.Title>
               <Card.Text>
                 Some quick example text to build on the card title and make up
                 the bulk of the card's content.
@@ -38,7 +38,7 @@ export const Services = props => {
         <Col md={3} lg={3} xl={3} sm={12} xs={12}>
           <Card className="m-1">
             <Card.Body>
-              <Card.Title>Services 1</Card.Title>
+              <Card.Title>Services 3</Card.Title>
               <Card.Text>
                 Some quick example text to build on the card title and make up
                 the bulk of the card's content.
@@ -50,7 +50,7 @@ export const Services = props => {
         <Col md={3} lg={3} xl={3} sm={12} xs={12}>
           <Card className="m-1">
             <Card.Body>
-              <Card.Title>Services 1</Card.Title>
+              <Card.Title>Services 4</Card.Title>
               <Card.Text>
                 Some quick example text to build on the card title and make up
                 the bulk of the card's content.
