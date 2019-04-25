@@ -6,8 +6,8 @@ import { Profile } from "./Profile";
 import { Payments } from "./Payments";
 export const User = props => {
   return (
-    <div className="user mt-4">
-      <Tab.Container id="left-tabs" defaultActiveKey="first">
+    <Tab.Container id="left-tabs" defaultActiveKey="first">
+      <div className="user mt-4">
         <Row>
           <Col sm={2} xs={4} md={2} lg={1} xl={1}>
             <Nav variant="pills" className="flex-column">
@@ -36,7 +36,7 @@ export const User = props => {
             </Tab.Content>
           </Col>
         </Row>
-      </Tab.Container>
-    </div>
+      </div>
+    </Tab.Container>
   );
 };

@@ -4,7 +4,7 @@ html {
 }
 
 .main{
-  min-height: calc(100vh - 210px);
+  min-height: calc(100vh - 235px);
 }
 
 .icon{
@@ -20,5 +20,17 @@ html {
   :hover{
     color:blue;
     cursor: pointer;
+  }
+}
+
+.tag{
+  box-shadow: inset 0 0 0 2px transparent;
+  color: #fff;
+  background-color: #0073b1;
+  border-radius: 32px;
+  padding:5px;
+  margin:2px;
+  .icons{
+    display: inline;
   }
 }
