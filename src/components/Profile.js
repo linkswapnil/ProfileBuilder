@@ -6,7 +6,7 @@ import { ServicesModal } from "./ServicesModal";
 export class Profile extends React.Component {
   constructor(...args) {
     super(...args);
-    this.state = { 
+    this.state = {
       profileModalShow: false,
       servicesModalShow: false
     };
@@ -25,9 +25,9 @@ export class Profile extends React.Component {
   }
   render() {
     return (
-      <div className="profile">
+      <div>
         <Row>
-          <Col sm={10} xs={10}>
+          <Col>
             <Card>
               <Card.Body>
                 <Card.Title>
@@ -54,7 +54,7 @@ export class Profile extends React.Component {
           }}
         />
         <Row>
-          <Col sm={10} xs={10}>
+          <Col>
             <Card>
               <Card.Body>
                 <Card.Title>

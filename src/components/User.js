@@ -1,15 +1,15 @@
 import React from "react";
 import "./User.scss";
-import { Nav, Row, Tab, Col } from "react-bootstrap";
+import { Nav, Row, Tab, Col, Container } from "react-bootstrap";
 import { Orders } from "./Orders";
 import { Profile } from "./Profile";
 import { Payments } from "./Payments";
 export const User = props => {
   return (
-    <div className="profile container mt-1 mb-1">
-      <Tab.Container id="left-tabs-example" defaultActiveKey="first">
+    <div className="user mt-4">
+      <Tab.Container id="left-tabs" defaultActiveKey="first">
         <Row>
-          <Col sm={4} xs={4}>
+          <Col sm={2} xs={4} md={2} lg={1} xl={1}>
             <Nav variant="pills" className="flex-column">
               <Nav.Item>
                 <Nav.Link eventKey="first">Profile</Nav.Link>
@@ -22,7 +22,7 @@ export const User = props => {
               </Nav.Item>
             </Nav>
           </Col>
-          <Col sm={8} xs={8}>
+          <Col sm={10} xs={8} md={10} lg={11} xl={11}>
             <Tab.Content>
               <Tab.Pane eventKey="first">
                 <Profile />

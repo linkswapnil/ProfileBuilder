@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, Button, Row, Col} from "react-bootstrap";
+import { Card, Button, Row, Col } from "react-bootstrap";
 export const Services = props => {
   return (
     <div className="mt-5">
