@@ -19,6 +19,12 @@ export class Profile extends React.Component {
         "Computer Hardware",
         "Administration",
         "Agile & Scrum"
+      ],
+      services: [
+        { id:1, name: "Service 1", selected: true },
+        { id:2, name: "Service 2", selected: true },
+        { id:3, name: "Service 3", selected: true },
+        { id:4, name: "Service 4", selected: true }
       ]
     };
   }
@@ -39,6 +45,11 @@ export class Profile extends React.Component {
   }
   onEditSkills() {
     this.setState({ editSkills: !this.state.editSkills });
+  }
+  updateServices(services) {
+    this.setState({
+      services
+    });
   }
   render() {
     return (
@@ -84,8 +95,15 @@ export class Profile extends React.Component {
                   />
                 </Card.Title>
                 <Card.Text className="pl-3">
-                  <Row>FirstName : John</Row>
-                  <Row>LastName : Smith</Row>
+                  <Row>
+                    <ul className="list-unstyled service-list">
+                      {this.state.services.map(s => {
+                        return (
+                          <li>{s.selected ? <label>{s.name}</label> : ""}</li>
+                        );
+                      })}
+                    </ul>
+                  </Row>
                 </Card.Text>
               </Card.Body>
             </Card>
@@ -138,6 +156,10 @@ export class Profile extends React.Component {
         </Row>
         <ServicesModal
           show={this.state.servicesModalShow}
+          services={this.state.services}
+          updateServices={services => {
+            this.updateServices(services);
+          }}
           onHide={() => {
             this.closeServicesModal();
           }}

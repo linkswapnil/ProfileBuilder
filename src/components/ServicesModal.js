@@ -1,6 +1,20 @@
 import React from "react";
-import { Modal, Button, Form } from "react-bootstrap";
+import { Modal, Button } from "react-bootstrap";
 export class ServicesModal extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      services: props.services
+    };
+  }
+  handleCheck(s) {
+    const services = this.state.services;
+    const service = services.find(service => service.id === s.id);
+    service.selected = !service.selected;
+    this.setState({
+      services
+    });
+  }
   render() {
     return (
       <Modal
@@ -15,20 +29,32 @@ export class ServicesModal extends React.Component {
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <Form>
-            <Form.Group controlId="formBasicFirstName">
-              <Form.Label>First Name</Form.Label>
-              <Form.Control type="text" placeholder="Enter first name" />
-            </Form.Group>
-
-            <Form.Group controlId="formBasicLastName">
-              <Form.Label>Last Name</Form.Label>
-              <Form.Control type="password" placeholder="Enter last name" />
-            </Form.Group>
-          </Form>
+          <ul className="list-unstyled service-list">
+            {this.state.services.map((s, i) => {
+              return (
+                <li>
+                  <input
+                    id={s.id}
+                    onChange={() => {
+                      this.handleCheck(s);
+                    }}
+                    defaultChecked={s.selected}
+                    type="checkbox"
+                  />
+                  <label htmlFor={s.id}>{s.name}</label>
+                </li>
+              );
+            })}
+          </ul>
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="primary" type="submit">
+          <Button
+            onClick={() => {
+              this.props.updateServices(this.state.services);
+              this.props.onHide();
+            }}
+            variant="primary"
+          >
             Save
           </Button>
           <Button onClick={this.props.onHide}>Close</Button>
