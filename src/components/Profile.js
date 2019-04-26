@@ -12,6 +12,7 @@ export class Profile extends React.Component {
     this.state = {
       profileModalShow: false,
       servicesModalShow: false,
+      editSkills: false,
       tags: [],
       skills: [
         "Weapons Handling",
@@ -35,6 +36,9 @@ export class Profile extends React.Component {
   }
   onEditServices() {
     this.setState({ servicesModalShow: true });
+  }
+  onEditSkills() {
+    this.setState({ editSkills: !this.state.editSkills });
   }
   render() {
     return (
@@ -93,28 +97,40 @@ export class Profile extends React.Component {
               <Card.Body>
                 <Card.Title>
                   Skills
-                  <Edit
-                    onClose={this.closeProfileModal}
-                    onEditClick={() => {
-                      this.onEditServices();
-                    }}
-                  />
-                </Card.Title>
-                <Card.Text className="pl-3">
-                  <Row className="d-none">
-                    {this.state.skills.map(s => {
-                      return <div className="react-tagsinput-tag">{s}</div>;
-                    })}
-                  </Row>
-                  <Row>
-                    <TagsInput
-                      value={this.state.skills}
-                      inputProps={{ placeholder: "Add a Skill.." }}
-                      onChange={tags => {
-                        this.handleChange(tags);
+                  {this.state.editSkills ? (
+                    <span
+                      class="icon save fas fa-save"
+                      onClick={() => {
+                        this.onEditSkills();
                       }}
                     />
-                  </Row>
+                  ) : (
+                    <Edit
+                      onClose={this.closeProfileModal}
+                      onEditClick={() => {
+                        this.onEditSkills();
+                      }}
+                    />
+                  )}
+                </Card.Title>
+                <Card.Text className="pl-3">
+                  {!this.state.editSkills ? (
+                    <Row>
+                      {this.state.skills.map(s => {
+                        return <div className="react-tagsinput-tag">{s}</div>;
+                      })}
+                    </Row>
+                  ) : (
+                    <Row>
+                      <TagsInput
+                        value={this.state.skills}
+                        inputProps={{ placeholder: "Add a Skill.." }}
+                        onChange={tags => {
+                          this.handleChange(tags);
+                        }}
+                      />
+                    </Row>
+                  )}
                 </Card.Text>
               </Card.Body>
             </Card>
