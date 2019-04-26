@@ -18,7 +18,7 @@ export class Profile extends React.Component {
         "Weapons Handling",
         "Computer Hardware",
         "Administration",
-        "Agile"
+        "Agile & Scrum"
       ]
     };
   }
