@@ -13,7 +13,7 @@ export const Routes = () => {
       <Container fluid="true" className="main">
         <Switch>
           <Route exact path="/" component={Home} />
-          <Route exact path="/user" component={User} />
+          <Route exact path="/profile" component={User} />
         </Switch>
       </Container>
       <Footer />

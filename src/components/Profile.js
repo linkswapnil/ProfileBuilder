@@ -3,13 +3,26 @@ import { Card, Row, Col } from "react-bootstrap";
 import { Edit } from "./icons/Edit";
 import { ProfileModal } from "./ProfileModal";
 import { ServicesModal } from "./ServicesModal";
+import TagsInput from "react-tagsinput";
+
+import "react-tagsinput/react-tagsinput.css";
 export class Profile extends React.Component {
   constructor(...args) {
     super(...args);
     this.state = {
       profileModalShow: false,
-      servicesModalShow: false
+      servicesModalShow: false,
+      tags: [],
+      skills: [
+        "Weapons Handling",
+        "Computer Hardware",
+        "Administration",
+        "Agile"
+      ]
     };
+  }
+  handleChange(skills) {
+    this.setState({ skills });
   }
   closeProfileModal() {
     this.setState({ profileModalShow: false });
@@ -88,38 +101,19 @@ export class Profile extends React.Component {
                   />
                 </Card.Title>
                 <Card.Text className="pl-3">
+                  <Row className="d-none">
+                    {this.state.skills.map(s => {
+                      return <div className="react-tagsinput-tag">{s}</div>;
+                    })}
+                  </Row>
                   <Row>
-                    <div className="tag">
-                      <span class="icons">
-                        <li className="list-unstyled"
-                          aria-hidden="true"
-                          type="plus-icon"
-                          size="small"
-                        >
-                          <svg
-                            viewBox="0 0 24 24"
-                            width="24px"
-                            height="24px"
-                            x="0"
-                            y="0"
-                            preserveAspectRatio="xMinYMin meet"
-                            class="artdeco-icon"
-                            focusable="false"
-                          >
-                            <path
-                              d="M14,9H9v5H7V9H2V7H7V2H9V7h5V9Z"
-                              class="small-icon"
-                            />
-                          </svg>
-                        </li>
-                      </span>
-                      Skill 1sbadjkjksdahkashd
-                    </div>
-                    <div className="tag">Skill 2</div>
-                    <div className="tag">Skill 3</div>
-                    <div className="tag">Skill 4</div>
-                    <div className="tag">Skill 5</div>
-                    <div className="tag">Skill 6</div>
+                    <TagsInput
+                      value={this.state.skills}
+                      inputProps={{ placeholder: "Add a Skill.." }}
+                      onChange={tags => {
+                        this.handleChange(tags);
+                      }}
+                    />
                   </Row>
                 </Card.Text>
               </Card.Body>
